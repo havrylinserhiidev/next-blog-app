@@ -1,25 +1,16 @@
 import React from 'react';
-import Link from "next/link";
+import {Navigation} from "@/components/Navigation";
 
 const navigation = [
-    {
-        name: 'Home', href: '/'
-    }, {
-        name: 'Blog', href: '/blog'
-    }, {
-        name: 'About', href: '/about'
-    },
+    {label: 'Home', href: '/'},
+    {label: 'Blog', href: '/blog'},
+    {label: 'About', href: '/about'},
 ]
 
 function TheHeader() {
     return (
         <header>
-            {
-                navigation.map(item => (
-                    <Link key={item.name} href={item.href}>{item.name}</Link>
-                ))
-            }
-
+            <Navigation navLinks={navigation}></Navigation>
         </header>
     );
 }
